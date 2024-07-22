@@ -1,14 +1,11 @@
 document.getElementById('fetchDataBtn').addEventListener('click', fetchData);
-
 function fetchData() {
     const xhr = new XMLHttpRequest();
     xhr.open('GET', 'https://jsonplaceholder.typicode.com/posts', true);
-
     xhr.onload = function() {
         if (this.status === 200) {
             const posts = JSON.parse(this.responseText);
             let output = '';
-
             posts.forEach(function(post) {
                 output += `
                     <div class="card mb-3">
@@ -19,15 +16,12 @@ function fetchData() {
                     </div>
                 `;
             });
-
             document.getElementById('dataContainer').innerHTML = output;
         }
     };
-
     xhr.onerror = function() {
         console.error('Request error...');
     };
-
     xhr.send();
 }
 
