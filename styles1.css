@@ -1,0 +1,11 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #d41fb9;
+    padding-top: 20px;
+}
+
+#dataContainer {
+    margin-top: 20px;
+    text-align: left;
+}
+
