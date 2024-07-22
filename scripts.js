@@ -1,4 +1,3 @@
-document.getElementById('fetchDataBtn').addEventListener('click', fetchData);
 function fetchData() {
     const xhr = new XMLHttpRequest();
     xhr.open('GET', 'https://jsonplaceholder.typicode.com/posts', true);
@@ -17,11 +16,14 @@ function fetchData() {
                 `;
             });
             document.getElementById('dataContainer').innerHTML = output;
+        } else {
+            document.getElementById('dataContainer').innerHTML = '<p class="text-danger">Error fetching data</p>';
         }
     };
     xhr.onerror = function() {
-        console.error('Request error...');
+        document.getElementById('dataContainer').innerHTML = '<p class="text-danger">Request error...</p>';
     };
     xhr.send();
 }
+
 
